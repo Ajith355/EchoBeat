@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore</title>
+    
     <link rel="stylesheet" href="explore-style.css"/>
-     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 </head>
 <body>
+    
     <form class="search-bar" action="#" method="get">
         <input type="text" placeholder="Search music..." name="q" />
         <button type="submit">🔍</button>
@@ -91,5 +94,9 @@
             currentTime.textContent = formatTime(audio.currentTime);
         });
     </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+            AOS.init();
+        </script>
 </body>
 </html>

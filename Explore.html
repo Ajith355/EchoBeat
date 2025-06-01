@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <link rel="stylesheet" href="explore-style.css"/>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+</head>
+<body>
+    <form class="search-bar" action="#" method="get">
+        <input type="text" placeholder="Search music..." name="q" />
+        <button type="submit">🔍</button>
+    </form>
+    <div class="animation" data-aos="zoom-in" data-aos-duration="1000">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/5pGtQxaiAbNtXO5k/scene.splinecode"></spline-viewer>
+    </div>
+    <div class="content" data-aos="fade-up" data-aos-duration="1000">
+        <h1>Explore Music</h1>
+        <p>Discover new tracks, artists, and genres. Dive into the world of music with EchoBeat.</p>
+        <div class="navigation-list">
+            <a href="main.html">Back to Home</a>
+        </div>
+        <div class="featured-song">
+            <h2>Featured Song</h2>
+            <div class="song-info">
+                <span class="song-title">Royalty</span> &mdash; <span class="song-artist">NCS</span>
+            </div>
+            <div class="custom-player">
+                <button id="playpause-btn" class="player-btn">
+                    <img id="playpause-icon"
+                         src="https://cdn-icons-png.flaticon.com/512/727/727245.png"
+                         alt="Play"
+                         style="width:1.3em;height:1.3em;">
+                </button>
+                <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                <audio id="audio" style="display:none;">
+                    <source src="Songz/Maestro Chives, Egzod, Neoni - Royalty [NCS Release].mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div>
+        
+    </div> 
+       
+    <script>
+        const audio = document.getElementById('audio');
+        const playPauseBtn = document.getElementById('playpause-btn');
+        const currentTime = document.getElementById('current-time');
+        const duration = document.getElementById('duration');
+        const playPauseIcon = document.getElementById('playpause-icon');
+
+        function formatTime(sec) {
+            sec = Math.floor(sec);
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            return `${m}:${s.toString().padStart(2, '0')}`;
+        }
+
+        function updateBtn() {
+            if (audio.paused) {
+                playPauseIcon.src = "https://cdn-icons-png.flaticon.com/512/727/727245.png"; // play icon
+                playPauseIcon.alt = "Play";
+            } else {
+                playPauseIcon.src = "https://cdn-icons-png.flaticon.com/512/727/727243.png"; // normal pause icon
+                playPauseIcon.alt = "Pause";
+            }
+        }
+
+        playPauseBtn.onclick = () => {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+            // updateBtn(); // Not needed, handled by events below
+            
+        };
+
+        audio.addEventListener('play', updateBtn);
+        audio.addEventListener('pause', updateBtn);
+
+        audio.addEventListener('loadedmetadata', () => {
+            duration.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            currentTime.textContent = formatTime(audio.currentTime);
+        });
+    </script>
+</body>
+</html>

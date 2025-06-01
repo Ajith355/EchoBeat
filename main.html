@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
 </head>
 <body>
-    <h1>Hello world</h1>
-    <h2>hay</h2>
+    <div class="header"  data-aos="fade-up" data-aos-duration="1000">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            EchoBeat
+        </div>
+        <nav>
+            <ul class="header-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="animation" data-aos="zoom-in" data-aos-duration="1000">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.98/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/5pGtQxaiAbNtXO5k/scene.splinecode"></spline-viewer>
+    </div>
+    <div class ='content'  data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="">
+        <h1>Welcome to EchoBeat</h1>
+        <p>Discover the rhythm of your life with EchoBeat. Explore, create, and share your musical journey.</p>
+            <div class="navigation-list">
+                        <a href="#">Explore Music</a>
+            </div>
+    </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+            AOS.init();
+        </script>
 </body>
 </html>

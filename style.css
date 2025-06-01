@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000;
+}
+.animation{
+    position: absolute;
+    top : 5em;
+    right: -10rem;
+    width: 100vw;
+    height: 100vh;
+}
+.header{
+    position: absolute;
+    top: 0.5em;
+    width: 100%;
+    height: 5em;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+    gap: 2em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    border-radius: 1rem;
+    
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    height: auto;
+    width: auto;
+    gap: 0.5em;
+}
+
+.logo img {
+    height: 5em;
+    width: auto;
+    margin-right: 0.5em;
+    border-radius: 0.3em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.header-list{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.header-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    transition: background 0.2s, color 0.2s;
+}
+
+.header-list li a:hover,
+.header-list li a:focus {
+    background: #fff;
+    color: #222;
+}
+.content {
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 20rem;
+    height: auto;
+}
+.content.nagivation {
+    position: absolute;
+   
+}
+.navigation-list a {
+    display: inline-block;
+    background: #3a3a3a;
+    color: #fff;
+    padding: 0.75em 2em;
+    border-radius: 2em;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    margin-top: 1.5em;
+    border: 2px solid white;
+}
+
+.navigation-list a:hover,
+.navigation-list a:focus {
+    background: #515251;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    border-color: #fff;
+}
